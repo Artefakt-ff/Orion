@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300')
+
+
+$orange: #ffa248
+@mixin transition($seconds)
+  transition: $seconds
+  -moz-transition: $seconds
+  -webkit-transition: $seconds
+  -o-transition: $seconds
+body
+  font-family: 'Open Sans Condensed', sans-serif
+
+.button
+
+  min-height: 20px
+  border-radius: 20px
+  display: flex
+  justify-content: center
+  align-content: center
+  background-color: $orange
+  +transition(0.5s)
+.button:hover
+  +transition(0.5s)
+  filter: brightness(0.9)
+
+
+.section
+  height: 100vh
+  width: 100%
+
+.container-fluid
+  padding: 0
+
+.foreground
+  z-index: 1000
+  position: absolute
+  width: 100%
+  height: 100%
+  background-color: rgba(255, 255, 255, 0.5)
+
+.foreground_half
+  z-index: 1000
+  display: inline-block
+  position: absolute
+  height: 100%
+  width: 51%
+  background-color: rgba(255, 255, 255, 0.5)
+
+#jumbotron
+  .carousel
+    width: 100%
+    height: 100%
+    img
+      height: 100vh
+  #jumbotron_main
+    z-index: 10000
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    margin: auto
+    height: 50vh
+    width: 30vh
+    justify-content: center
+    align-content: center
+    img
+      height: 30vh
+    #jumbotron_icons
+      margin-top: 40px
+      a
+        +transition(0.5s)
+        img
+          height: 7vh
+      a:hover
+        +transition(0.5s)
+        filter: brightness(0.5)
+
+  #slider_down
+    z-index: 100000
+    position: absolute
+    bottom: 0
+    height: 7vh
+    width: 100%
+    background-color: rgba(0, 0, 0, 0.5)
+    display: flex
+    justify-content: center
+    align-content: center
+    a
+      cursor: pointer
+      +transition(0.5s)
+      i
+        font-size: 7vh
+        color: white
+
+    i:hover
+      color: $orange
+      +transition(0.5s)
+
+
+#choice
+  .side
+    width: 50%
+    height: 100%
+  .button
+    font-size: 6vh
+    color: white
+    border-radius: 3vh
+    position: absolute
+    bottom: 10vh
+    left: 0
+    right: 0
+    margin: 0 10vw 0 10vw
+  #left_side
+    position: relative
+    display: inline-block
+    background: url("../images/jumbotron_background_1.jpg")
+    +transition(0.8s)
+    opacity: 0.5
+  #left_side:hover
+    opacity: 1
+    +transition(0.8s)
+  #right_side
+    position: relative
+    display: inline-block
+    float: right
+    background: url("../images/jumbotron_background_0.jpg")
+    +transition(0.8s)
+    opacity: 0.5
+  #right_side:hover
+    +transition(0.8s)
+    opacity: 1
+
+
+#projects
+  width: 100%
+  min-height: 100vh
+  background: url("../images/projects_background.png") center fixed
+  text-align: center
+  .title
+    margin: 5vh
+    hr
+      background-color: black
+  .row
+    width: 100%
+    .col-md-5
+      .project
+        margin-bottom: 40px
+        .preview
+          position: relative
+          .play
+            z-index: 1000
+            position: absolute
+            margin: auto
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            +transition(0.5s)
+            opacity: 1
+            cursor: pointer
+          .play:hover
+            +transition(0.5s)
+            opacity: 0.8
+
+          .preview_image
+            img
+              border-radius: 3vh
+              width: 100%
+              opacity: 1
+
+        h3
+          font-size: 5vh
+          font-weight: 500
+          text-align: left
+          margin-top: 20px
+        hr
+          background-color: black
+        p
+          text-align: left
